@@ -29,3 +29,15 @@ To finish our application, we need to create a single Java file. By default, Mav
 
 ## Run
 You can run the new code by `mvn spring-boot:run` and you'll see the output in a browser at `localhost:8080`. Spring Boot uses a Tomcat server behind the scenes.
+
+## Package to Jar
+Include build plugin mentioned in `pom.xml` file.
+Re-run `mvn package` to re-build everything.
+
+Look at new jar by the following
+
+```
+jar tvf target/myproject-0.0.1-SNAPSHOT.jar
+```
+
+Run jar file by `java -jar target/myproject-0.0.1-SNAPSHOT.jar`
