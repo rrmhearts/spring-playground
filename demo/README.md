@@ -1,0 +1,2 @@
+# Spring Initializer
+This project was started with the `https://start.spring.io/` Initializer program. It allows you to setup your project online with minimal effort. This is the result of going through that.
