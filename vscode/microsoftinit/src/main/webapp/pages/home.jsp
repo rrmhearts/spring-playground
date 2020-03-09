@@ -7,12 +7,15 @@
         <title>Insert title</title>
     </head>
     <body>
-        <h1>Welcome to Spring Boot</h1>
+        <h1>Welcome to Spring Boot, ${name}</h1> <!--JSPL format-->
 
 
     </body>
 </html>
 
+<!-- 
+    In MVC, this is a View
+-->
 <!--
     Call this view at
     localhost:8080/home
