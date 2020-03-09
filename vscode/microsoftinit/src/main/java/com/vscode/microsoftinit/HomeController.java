@@ -1,6 +1,7 @@
 package com.vscode.microsoftinit;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ public class HomeController
     // This will handle page requests for home.jsp
     @RequestMapping("/home") // what path being requested
     //@ResponseBody // will print text that is returned!
-    public String home(HttpServletRequest req) { // automatically will pass request query...
+    public String home(HttpServletRequest req, HttpServletResponse res) { // automatically will pass request query...
 
         String name = req.getParameter("name");
 
