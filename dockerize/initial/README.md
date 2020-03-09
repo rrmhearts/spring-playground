@@ -4,6 +4,8 @@
 ## Without Docker
 ./gradlew build && java -jar build/libs/gs-spring-boot-docker-0.1.0.jar
 
+Magic of `./gradlew bootRun`
+
 
 ## WITH Docker
 
