@@ -13,6 +13,6 @@ public class HomeController
         System.out.println("hi from home!"); // this can be seen!, but page errors, need more code...
 
         // Return to page! magic.. Autoconfig finds the page automatically.
-        return "home.jsp";
+        return "home";
     }
 }
