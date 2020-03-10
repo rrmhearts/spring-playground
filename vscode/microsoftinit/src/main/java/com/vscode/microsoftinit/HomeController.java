@@ -18,12 +18,13 @@ public class HomeController
     // This will handle page requests for home.jsp
     @RequestMapping("/home") // what path being requested
     //@ResponseBody // will print text that is returned!
-    public ModelAndView home(@RequestParam("name") String myName) { // automatically will pass request query...
+    // Any object can be passed into the view!
+    public ModelAndView home(Alien alien) { // automatically will pass request query...
         // Assign the param "name" to the variable myName
 
         // Add many objects to one view. Easy and clean.
         ModelAndView mv = new ModelAndView();
-        mv.addObject("name", myName);
+        mv.addObject("obj", alien);
         mv.setViewName("home");
 
         return mv;
