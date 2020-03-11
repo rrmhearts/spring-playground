@@ -7,7 +7,7 @@
         <title>Insert title</title>
     </head>
     <body>
-        <h1>Welcome to Spring Boot ${obj.aid}, ${obj.aname}, ${obj.tech}</h1> <!--JSPL format-->
+        <h1>Welcome to Spring Boot</h1> <!--JSPL format-->
 
 
     </body>

@@ -1,14 +1,22 @@
-package com.vscode.microsoftinit;
+package com.vscode.microsoftinit.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.vscode.microsoftinit.dao.AlienRepo;
+import com.vscode.microsoftinit.model.Alien;
 /*
     In MVC, this is the controller
 */ 
 @Controller
-public class ModelController
+public class AlienController
 {
+    // Will look for the object and create it automatically.
+    // You don't have to implement this interface! Spring handles it.
+    @Autowired
+    AlienRepo repo;
+
     @RequestMapping("/")
     public String model()
     {
@@ -25,6 +33,7 @@ public class ModelController
     @RequestMapping("/addAlien")
     public String addAlien(Alien alien)
     {
+        repo.save(alien);
         return "add";
     }
 
