@@ -1,9 +1,17 @@
 package com.vscode.microsoftinit.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.vscode.microsoftinit.dao.AlienRepo;
 import com.vscode.microsoftinit.model.Alien;
 /*
@@ -34,7 +42,24 @@ public class AlienController
     public String addAlien(Alien alien)
     {
         repo.save(alien);
-        return "add";
+        return "model";
     }
+
+    @RequestMapping("/getAlien")
+    public ModelAndView getAlien(@RequestParam int aid)
+    {
+        ModelAndView mv = new ModelAndView("show"); // set view name
+        
+        Alien alien = repo.findById(aid).orElse(new Alien());
+        mv.addObject(alien);
+        return mv;
+    }
+
+    public List<Alien> listAliens() {
+        List<Alien> aliens = new ArrayList<>();
+        repo.findAll().forEach(aliens::add);
+        return aliens;        
+    }
+
 
 }

@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Model Tutorial</h1> <!--JSPL format-->
+        <h3>Add Alien</h3>
         <form action="addAlien">
             <input type="text" name="aid"><br>
             <input type="text" name="aname"><br>
@@ -15,7 +16,11 @@
         </form>
 
         <!-- second form to fetch it.. -->
-
+        <h3>Retrieve by AId</h3>
+        <form action="getAlien">
+            <input type="text" name="aid"><br>
+            <input type="submit"><br>
+        </form>
 
     </body>
 </html>
