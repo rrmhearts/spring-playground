@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<microsoftinit>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.vscode.microsoftinit.DemoApplication",
+            "projectName": "microsoftinit",
+            "args": ""
+        }
+    ]
+}

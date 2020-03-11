@@ -1,0 +1,1 @@
+insert into ALIEN_MODEL values (101, 'Ryan');
