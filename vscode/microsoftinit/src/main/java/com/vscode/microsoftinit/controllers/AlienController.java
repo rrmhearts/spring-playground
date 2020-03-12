@@ -51,6 +51,18 @@ public class AlienController
         ModelAndView mv = new ModelAndView("show"); // set view name
         
         Alien alien = repo.findById(aid).orElse(new Alien());
+        System.out.println(repo.findByAname("Wendy"));
+        System.out.println(repo.findByTech("Java"));
+        System.out.println(repo.findByAidGreaterThan(102));
+        System.out.println(repo.findByTechSorted("Ruby"));
+
+        /* Sysouts return::
+[Alien [aid=103, aname=Wendy]]
+[Alien [aid=104, aname=Bella]]
+[Alien [aid=103, aname=Wendy], Alien [aid=104, aname=Bella], Alien [aid=105, aname=Hannah]]
+[Alien [aid=105, aname=Hannah]]
+        */
+
         mv.addObject(alien);
         return mv;
     }
