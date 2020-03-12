@@ -73,5 +73,44 @@ public class AlienController
         return aliens;        
     }
 
+    /*
+	@DeleteMapping("/alien/{aid}")
+	public String deleteAlien(@PathVariable int aid)
+	{
+		Alien a = repo.getOne(aid);
+		repo.delete(a);
+		return "deleted";
+	}
+	
+	@PostMapping(path="/alien",consumes= {"application/json"})
+	public Alien addAlien(@RequestBody Alien alien)
+	{
+		repo.save(alien);
+		return alien;
+	}
+	@GetMapping(path="/aliens")
+	public List<Alien> getAliens()
+	{
+		return repo.findAll();
+			
+	}
+	@PutMapping(path="/alien",consumes= {"application/json"})
+	public Alien saveOrUpdateAlien(@RequestBody Alien alien)
+	{
+		repo.save(alien);
+		return alien;
+	}
+	
+	
+	@RequestMapping("/alien/{aid}")
+	public Optional<Alien> getAlien(@PathVariable("aid")int aid)
+	{
+		return repo.findById(aid);
+		
+		
+	}
+
+    */
+
 
 }
