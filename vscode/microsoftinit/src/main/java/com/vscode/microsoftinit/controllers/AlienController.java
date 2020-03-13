@@ -80,7 +80,7 @@ public class AlienController
     */
 
     /* This will return data to browser*/
-    @RequestMapping("/aliens")
+    @RequestMapping(path="/aliens", produces = {"application/xml"})
     @ResponseBody // Returning data, not view name.
 	public List<Alien> aliens()
 	{

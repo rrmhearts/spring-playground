@@ -24,7 +24,8 @@ dependencies {
 			'org.apache.tomcat.embed:tomcat-embed-jasper',
 			'javax.servlet:jstl',
 			'org.springframework.boot:spring-boot-starter-data-jpa',
-			'com.h2database:h2')
+			'com.h2database:h2',
+			'com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
 			
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
