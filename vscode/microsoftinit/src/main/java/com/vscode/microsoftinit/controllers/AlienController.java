@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
@@ -70,26 +71,29 @@ public class AlienController
         return mv;
     }
 
+    /*** Not needed with /aliens endpoint
     public List<Alien> listAliens() {
         List<Alien> aliens = new ArrayList<>();
         repo.findAll().forEach(aliens::add);
         return aliens;        
     }
+    */
 
     /* This will return data to browser*/
     @RequestMapping("/aliens")
     @ResponseBody // Returning data, not view name.
-	public String aliens()
+	public List<Alien> aliens()
 	{
         // not a view, thus we need ResponseBody
-		return repo.findAll().toString();
+        // This data is converted to JSON by the Jackson library used by Spring.
+		return repo.findAll();
     }
     
     @RequestMapping("/alien/{aid}")
     @ResponseBody // Returning data, not view name.
-	public String alien_aid(@PathVariable("aid")int aid)
+	public Optional<Alien> alien_aid(@PathVariable("aid")int aid)
 	{
-		return repo.findById(aid).toString();
+		return repo.findById(aid);
     }
     
     /*

@@ -1,15 +1,18 @@
 package com.vscode.microsoftinit.dao;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
 import com.vscode.microsoftinit.model.Alien;
 
-/* interface */
+/* interface 
+    JpaRepository extends CrudRepository and provies many extra features.
+    * findAll feature
+*/
 
-public interface AlienRepo extends CrudRepository<Alien, Integer>
+public interface AlienRepo extends JpaRepository<Alien, Integer>
 {
     // This does what it says by magic.
     // Black magic, auto adds these find methods based on the name of the function
